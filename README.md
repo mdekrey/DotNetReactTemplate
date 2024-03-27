@@ -6,11 +6,11 @@ A modern full React SPA application with .NET backend-for-frontend.
 - [ ] Full README
 - [ ] MSBuild Tooling
 - [ ] .NET Server
-    - [ ] OpenAPI generation
-    - [ ] SPA service
-    - [ ] Telemetry
+    - [X] OpenAPI generation
+    - [X] SPA service
+    - [X] Telemetry
     - [ ] Tests
-    - [ ] .env file support
+    - [X] .env file support
     - [ ] user-secrets
 - [ ] UI
     - [ ] PNPM
@@ -25,7 +25,7 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [ ] Publish to NuGet as a package
     - [ ] Publish to a (orphaned) Branch to use as a 0.0 service line
 - [ ] Code cleanliness
-    - [ ] Editorconfig
-    - [ ] dotnet format
+    - [X] Editorconfig
+    - [X] dotnet format
     - [ ] eslint
     - [ ] prettier
