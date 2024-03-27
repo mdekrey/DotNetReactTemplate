@@ -13,8 +13,8 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] .env file support
     - [ ] user-secrets
 - [ ] UI
-    - [ ] PNPM
-    - [ ] nvmrc
+    - [X] PNPM
+    - [X] nvmrc
     - [ ] Vite
     - [ ] Tests
     - [ ] Initial shared library
