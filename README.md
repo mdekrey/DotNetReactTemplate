@@ -5,6 +5,9 @@ A modern full React SPA application with .NET backend-for-frontend.
 ## Features (WIP):
 - [ ] Full README
 - [ ] MSBuild Tooling
+    - [X] Integrate Frontend build
+    - [X] Integrate Frontend tests
+    - [ ] Handle Visual Studio experiencce
     - [X] Integrate Backend code cleanliness
     - [ ] Integrate Frontend code cleanliness
 - [ ] .NET Server
