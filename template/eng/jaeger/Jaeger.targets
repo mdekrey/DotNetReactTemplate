@@ -1,0 +1,12 @@
+<Project>
+
+	<Target Name="EnsureJaegerStarted" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
+		<!-- Starts up jaeger for OpenTelemetry records if Docker is running -->
+		<Exec Command="docker ps" ContinueOnError="true" EchoOff="true" StandardOutputImportance="low" StandardErrorImportance="low">
+			<Output TaskParameter="ExitCode" PropertyName="IsDockerRunning" />
+		</Exec>
+		<Message Condition="'$(IsDockerRunning)' != '0'" Text="The docker runtime was not started." />
+		<Exec WorkingDirectory="$(SolutionRoot)/eng/jaeger" Command="docker-compose up -d" ContinueOnError="true" Condition="'$(IsDockerRunning)' == '0'" />
+	</Target>
+
+</Project>
