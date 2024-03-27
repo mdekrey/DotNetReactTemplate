@@ -5,6 +5,8 @@ A modern full React SPA application with .NET backend-for-frontend.
 ## Features (WIP):
 - [ ] Full README
 - [ ] MSBuild Tooling
+    - [X] Integrate Backend code cleanliness
+    - [ ] Integrate Frontend code cleanliness
 - [ ] .NET Server
     - [X] OpenAPI generation
     - [X] SPA service
@@ -16,7 +18,7 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] PNPM
     - [X] nvmrc
     - [X] Vite
-    - [ ] Tests
+    - [X] Tests
     - [ ] Initial shared library
     - [X] OpenAPI generation
 - [ ] Docker

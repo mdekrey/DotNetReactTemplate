@@ -13,3 +13,6 @@ describe('GitVersionPresentation', () => {
 		expect(actual).toBe(`Hash: ${gitHash}, Tag: ${tag}`);
 	});
 });
+
+// TODO: test for `useGitVersion`
+// @principlestudios/openapi-codegen-typescript-msw only supports msw 1.x - needs to be updated
