@@ -1,4 +1,6 @@
 #pragma warning disable CA1861 // Avoid constant arrays as arguments - the envfile list belongs here, and static arrays cannot be created in Program.cs
+using CompleteDotnetReactSpa.Environment;
+
 using dotenv.net;
 
 DotEnv.Load(new DotEnvOptions(envFilePaths: [
@@ -9,12 +11,12 @@ DotEnv.Load(new DotEnvOptions(envFilePaths: [
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-// services.RegisterEnvironment(
-// 	isProduction: builder.Environment.IsProduction(),
-// 	environmentName: builder.Environment.EnvironmentName,
-// 	buildConfig: builder.Configuration.GetSection("build"),
-// 	dataProtectionConfig: builder.Configuration.GetSection("DataProtection")
-// );
+services.RegisterEnvironment(
+	isProduction: builder.Environment.IsProduction(),
+	environmentName: builder.Environment.EnvironmentName,
+	buildConfig: builder.Configuration.GetSection("build"),
+	dataProtectionConfig: builder.Configuration.GetSection("DataProtection")
+);
 
 var app = builder.Build();
 

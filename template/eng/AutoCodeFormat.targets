@@ -4,14 +4,14 @@
 		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<AnalysisLevel>latest</AnalysisLevel>
+		<AnalysisLevel>latest-Recommended</AnalysisLevel>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 
 		<!--
-			CA1707 - assembly naming
+			CA2007 - ConfigureAwait is not necessary in ASP.NET Core
 		 -->
-		<NoWarn>$(NoWarn),CA1707</NoWarn>
+		<NoWarn>$(NoWarn);CA2007</NoWarn>
 	</PropertyGroup>
 
 	<!-- The following are test assembly supressions -->
