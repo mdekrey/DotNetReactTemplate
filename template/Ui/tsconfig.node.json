@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"composite": true,
+		"skipLibCheck": true,
+		"module": "ESNext",
+		"target": "ESNext",
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"outDir": "./dev-dist/node",
+		"types": ["node"]
+	},
+	"include": ["*.ts", "*.mts", "*.cts", ".*.cjs", "scripts"]
+}

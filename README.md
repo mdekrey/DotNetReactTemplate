@@ -15,10 +15,10 @@ A modern full React SPA application with .NET backend-for-frontend.
 - [ ] UI
     - [X] PNPM
     - [X] nvmrc
-    - [ ] Vite
+    - [X] Vite
     - [ ] Tests
     - [ ] Initial shared library
-    - [ ] OpenAPI generation
+    - [X] OpenAPI generation
 - [ ] Docker
 - [ ] dotnet template definition
 - [ ] CI/CD
@@ -27,5 +27,5 @@ A modern full React SPA application with .NET backend-for-frontend.
 - [ ] Code cleanliness
     - [X] Editorconfig
     - [X] dotnet format
-    - [ ] eslint
-    - [ ] prettier
+    - [X] eslint
+    - [X] prettier
