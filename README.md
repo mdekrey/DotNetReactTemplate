@@ -9,7 +9,7 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] Integrate Frontend tests
     - [X] Handle Visual Studio experiencce
     - [X] Integrate Backend code cleanliness
-    - [ ] Integrate Frontend code cleanliness
+    - [X] Integrate Frontend code cleanliness
 - [ ] .NET Server
     - [X] OpenAPI generation
     - [X] SPA service

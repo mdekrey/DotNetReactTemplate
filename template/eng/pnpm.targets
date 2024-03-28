@@ -3,7 +3,7 @@
 		<ImportByWildcardAfterMicrosoftCommonTargets>false</ImportByWildcardAfterMicrosoftCommonTargets>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 
-		<PnpmStepRecordDir Condition=" '$(PnpmStepRecordDir)' == '' ">$(ProjectDir)node_modules\</PnpmStepRecordDir>
+		<PnpmStepRecordDir Condition=" '$(PnpmStepRecordDir)' == '' ">$(BaseIntermediateOutputPath)</PnpmStepRecordDir>
 		<!-- pnpm allows an install for the entire solution -->
 		<PnpmInstallRecordPath Condition=" '$(PnpmInstallRecordPath)' == '' ">$(SolutionRoot)node_modules\_.install.$(Configuration)._</PnpmInstallRecordPath>
 		<PnpmPrebuildChecksRecordPath Condition=" '$(PnpmPrebuildChecksRecordPath)' == '' ">$(PnpmStepRecordDir)_.prebuild.$(Configuration)._</PnpmPrebuildChecksRecordPath>
@@ -51,6 +51,10 @@
 			Projects="$(SolutionRoot)eng/pnpm/pnpm-install.csproj"
 			Targets="PnpmInstall"
 			BuildInParallel="false" />
+	</Target>
+
+	<Target Name="Lint" BeforeTargets="NodeBuild" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
+		<Touch ForceTouch="true" Files="$(PnpmLintRecordPath)" AlwaysCreate="true" />
 	</Target>
 
 	<Target Name="NodeBuild" Condition="'$(PnpmBuildScript)' != ''" BeforeTargets="Build" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="@(CompileOutputs)">

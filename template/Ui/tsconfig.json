@@ -2,6 +2,8 @@
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
 		"rootDir": ".",
+		"composite": true,
+		"outDir": "./dev-dist/app",
 
 		"types": ["vite/client"],
 		"paths": {

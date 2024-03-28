@@ -8,7 +8,7 @@
 	<Import Project="$(RepositoryEngineeringDir)pnpm.targets" />
 
 	<ItemGroup>
-		<Compile Include="vite.config.ts" Watch="false" />
+		<Compile Include="vite.config.mts" Watch="false" />
 		<Compile Include="public/**/*" />
 		<Compile Remove="src/**/stories/**/*;src/**/*.stories.*" />
 		<Watch Include="$(SolutionRoot)schemas/**/*" />
@@ -29,4 +29,20 @@
 	</Target>
 
 	<Target Name="Generation" BeforeTargets="PrepareForBuild" />
+
+	<Target Name="ESLint" BeforeTargets="Lint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pnpm exec eslint &quot;**/*.{cjs,mjs,js,ts,tsx}&quot; --fix"/>
+	</Target>
+
+	<Target Name="Prettier" BeforeTargets="Lint" AfterTargets="ESLint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pnpm exec prettier --ignore-path &quot;$(SolutionRoot).prettierignore&quot; --config &quot;$(SolutionRoot).prettierrc&quot; --write &quot;**/*.{cjs,mjs,js,ts,tsx,yaml,json}&quot;"/>
+	</Target>
+
+	<Target Name="TypeScript" BeforeTargets="NodeBuild" DependsOnTargets="PrepareForBuild" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(ProjectDir)dev-dist/app/tsconfig.tsbuildinfo">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pnpm exec tsc -b"/>
+		<Touch ForceTouch="true" Files="$(ProjectDir)dev-dist/app/tsconfig.tsbuildinfo" />
+	</Target>
 </Project>
