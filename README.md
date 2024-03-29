@@ -14,7 +14,7 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] OpenAPI generation
     - [X] SPA service
     - [X] Telemetry
-    - [ ] Tests
+    - [X] Tests
     - [X] .env file support
     - [ ] user-secrets
 - [ ] UI

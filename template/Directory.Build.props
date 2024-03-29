@@ -25,6 +25,7 @@
 		<IntermediateOutputPath Condition="'$(PlatformName)' != 'AnyCPU'">$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\</IntermediateOutputPath>
 	</PropertyGroup>
 
+	<Import Project="$(RepositoryEngineeringDir)TestingUtils.props" />
 	<Import Project="Directory.Build.local.props" Condition="exists('$(MSBuildThisFileDirectory)Directory.Build.local.props')" />
 
 	<!-- Add Directory.Build.props customizations here -->

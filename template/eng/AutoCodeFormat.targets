@@ -17,6 +17,14 @@
 	<!-- The following are test assembly supressions -->
 	<PropertyGroup Condition=" $(AssemblyName.EndsWith('.Tests')) ">
 		<!--
+			CA1001 - tests do not need to dispose everything
+		 -->
+		<NoWarn>$(NoWarn);CA1001</NoWarn>
+		<!--
+			CA1852 - allow unsealed classes in test assemblies
+		 -->
+		<NoWarn>$(NoWarn);CA1852</NoWarn>
+		<!--
 			CS8002 - allow test assemblies to reference assemblies without strong names
 		 -->
 		<NoWarn>$(NoWarn);CS8002</NoWarn>
