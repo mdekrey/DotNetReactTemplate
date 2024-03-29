@@ -22,11 +22,11 @@ public class EnvironmentControllerShould
 			.CreateClient();
 
 		// Act
-		var response = await client.GetInfo();
+		var response = await client.GetEnvironmentInfo();
 
 		// Assert
 		response.Response.EnsureSuccessStatusCode(); // Status Code 200-299
-		var okResult = Assert.IsType<Operations.GetInfoReturnType.Ok>(response);
+		var okResult = Assert.IsType<Operations.GetEnvironmentInfoReturnType.Ok>(response);
 		Assert.Equal("HEAD", okResult.Body.GitHash);
 		Assert.Equal("unknown", okResult.Body.Tag);
 	}

@@ -1,20 +1,17 @@
 import { useCallback } from 'react';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { getInfo } from '@/utils/api/queries/getInfo';
+import type { EnvironmentInfo } from '@/utils/api/queries/getEnvironmentInfo';
+import { getEnvironmentInfo } from '@/utils/api/queries/getEnvironmentInfo';
 
 export function useGitVersion() {
-	const result = useSuspenseQuery(getInfo);
+	const result = useSuspenseQuery(getEnvironmentInfo);
 	return useCallback(
 		() => <GitVersionPresentation data={result.data} />,
 		[result.data],
 	);
 }
 
-export function GitVersionPresentation({
-	data,
-}: {
-	data: { gitHash: string; tag: string };
-}) {
+export function GitVersionPresentation({ data }: { data: EnvironmentInfo }) {
 	return (
 		<>
 			Hash: {data.gitHash}, Tag: {data.tag}
