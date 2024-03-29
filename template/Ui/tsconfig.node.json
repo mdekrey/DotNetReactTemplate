@@ -1,12 +1,6 @@
 {
+	"extends": "../tsconfig.base-node.json",
 	"compilerOptions": {
-		"allowJs": true,
-		"composite": true,
-		"skipLibCheck": true,
-		"module": "ESNext",
-		"target": "ESNext",
-		"moduleResolution": "bundler",
-		"allowSyntheticDefaultImports": true,
 		"outDir": "./dev-dist/node",
 		"types": ["node"]
 	},

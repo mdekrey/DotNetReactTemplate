@@ -2,7 +2,6 @@
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
 		"rootDir": ".",
-		"composite": true,
 		"outDir": "./dev-dist/app",
 
 		"types": ["vite/client"],
@@ -10,7 +9,7 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src", "./vitest.setup.mts"],
+	"include": ["src"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"
