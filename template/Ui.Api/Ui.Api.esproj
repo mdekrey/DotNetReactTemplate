@@ -1,31 +1,25 @@
 <Project Sdk="Microsoft.Build.NoTargets/3.7.0">
 	<PropertyGroup>
-		<PnpmBuildScript Condition=" '$(Configuration)' != 'Debug' ">pnpm vite build</PnpmBuildScript>
+		<PnpmBuildScript>pnpm exec tsc -b</PnpmBuildScript>
 		<PnpmTestScript>pnpm test</PnpmTestScript>
-
-		<ViteBuildDir>$(SolutionRoot)Server/wwwroot/</ViteBuildDir>
 	</PropertyGroup>
 	<Import Project="$(RepositoryEngineeringDir)pnpm.targets" />
 
 	<ItemGroup>
-		<Compile Include="vite.config.mts" Watch="false" />
-		<Compile Include="public/**/*" />
 		<Compile Remove="src/**/stories/**/*;src/**/*.stories.*" />
 		<Watch Include="$(SolutionRoot)schemas/**/*" />
 
-		<CompileOutputs Include="$(ViteBuildDir)\index.html" />
+		<CompileOutputs Include="dev-dist/app/tsconfig.tsbuildinfo" />
 
-		<Clean Include="$(ViteBuildDir)**/*" Exclude="$(ViteBuildDir).gitkeep" />
 		<Clean Include="src/generated/api/**/*" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Ui.Api\Ui.Api.esproj" />
-	</ItemGroup>
+	<Target Name="ResolveAliases" AfterTargets="NodeBuild">
+		<Exec WorkingDirectory="$(ProjectDir)" Command="pnpm tsc-alias"/>
+	</Target>
 
-	<Target Name="Ensure gitkeep" AfterTargets="Build">
-		<!-- Vite will destroy the gitkeep file -->
-		<Touch AlwaysCreate="true" ForceTouch="true" Files="$(ViteBuildDir).gitkeep" />
+	<Target Name="GenerateApi" BeforeTargets="Generation" DependsOnTargets="PnpmInstall" Inputs="$(SolutionRoot)schemas\api.yaml" Outputs="src/generated/api/.gitignore">
+		<Exec WorkingDirectory="$(ProjectDir)" Command="pnpm openapi-codegen-typescript ../schemas/api.yaml src/generated/api/ -c -o codegen.config.yaml"/>
 	</Target>
 
 	<Target Name="Generation" BeforeTargets="PrepareForBuild" />
@@ -38,11 +32,5 @@
 	<Target Name="Prettier" BeforeTargets="Lint" AfterTargets="ESLint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
 		<Exec WorkingDirectory="$(ProjectDir)"
 		      Command="pnpm exec prettier --ignore-path &quot;$(SolutionRoot).prettierignore&quot; --config &quot;$(SolutionRoot).prettierrc&quot; --write &quot;**/*.{cjs,mjs,js,ts,tsx,yaml,json}&quot;"/>
-	</Target>
-
-	<Target Name="TypeScript" BeforeTargets="NodeBuild" DependsOnTargets="PrepareForBuild" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(ProjectDir)dev-dist/app/tsconfig.tsbuildinfo">
-		<Exec WorkingDirectory="$(ProjectDir)"
-		      Command="pnpm exec tsc -b"/>
-		<Touch ForceTouch="true" Files="$(ProjectDir)dev-dist/app/tsconfig.tsbuildinfo" />
 	</Target>
 </Project>

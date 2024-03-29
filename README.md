@@ -16,12 +16,12 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] Telemetry
     - [X] Tests
     - [X] .env file support
-- [ ] UI
+- [X] UI
     - [X] PNPM
     - [X] nvmrc
     - [X] Vite
     - [X] Tests
-    - [ ] Initial shared library
+    - [X] Initial shared library
     - [X] OpenAPI generation
 - [ ] Docker
 - [X] Code cleanliness
