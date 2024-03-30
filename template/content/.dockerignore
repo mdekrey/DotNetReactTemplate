@@ -10,5 +10,5 @@ artifacts/
 Server/wwwroot/**/*
 !Server/wwwroot/.gitkeep
 **/node_modules
-ui/src/generated/
+Ui/src/generated/
 Ui*/dev-dist/

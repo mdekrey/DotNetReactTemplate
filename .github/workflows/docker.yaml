@@ -12,3 +12,4 @@ jobs:
       - name: 'Build image'
         run: |
           docker build . --build-arg GITHASH=${{ github.sha }} --build-arg BUILDTAG=${{ github.run_id }}
+        working-directory: ./template/content/
