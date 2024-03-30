@@ -44,6 +44,7 @@ app.MapWhen(context => context.Request.Method == "GET" || context.Request.Method
 	app.UseSpaStaticFiles();
 	app.UseSpa(spa =>
 	{
+//-:cnd:noEmit
 #if DEBUG
 		if (app.Environment.IsDevelopment())
 		{
@@ -52,6 +53,7 @@ app.MapWhen(context => context.Request.Method == "GET" || context.Request.Method
 			spa.UseViteDevelopmentServer("node_modules/.bin/vite", "--port {port}");
 		}
 #endif
+//+:cnd:noEmit
 	});
 });
 

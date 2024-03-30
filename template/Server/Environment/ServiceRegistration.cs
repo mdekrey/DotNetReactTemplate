@@ -37,22 +37,7 @@ public static class ServiceRegistration
 		if (isProduction)
 		{
 			var dataProtectionBuilder = services.AddDataProtection();
-#if IncludeAzure
-			if (dataProtectionConfig["AzureKeyVault"] is string keyUri &&
-				dataProtectionConfig["AzureBlobStorage"] is string blobUri)
-			{
-				dataProtectionBuilder
-					.PersistKeysToAzureBlobStorage(new Uri(blobUri), new DefaultAzureCredential())
-					.ProtectKeysWithAzureKeyVault(new Uri(keyUri), new DefaultAzureCredential());
-			}
-#endif
-#if IncludeAWS
-			if (dataProtectionConfig["Aws_SSM_Path"] is string appSsmPath)
-			{
-				services.AddAWSService<IAmazonSimpleSystemsManagement>(new AWSOptions { Credentials = new ECSTaskCredentials() });
-				services.AddDataProtection().PersistKeysToAWSSystemsManager($"{appSsmPath}/DATA_PROTECTION");
-			}
-#endif
+			// TODO: add specific DataProtection provider for production
 		}
 	}
 
