@@ -33,7 +33,8 @@
 	},
 	"[yaml]": {
 		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.insertSpaces": true
 	},
 	"dotnet.defaultSolution": "CompleteDotnetReactSpa.sln",
 	"files.associations": {
