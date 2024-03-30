@@ -30,12 +30,12 @@
 
 	<Target Name="Generation" BeforeTargets="PrepareForBuild" />
 
-	<Target Name="ESLint" BeforeTargets="Lint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
+	<Target Name="ESLint" BeforeTargets="Lint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)" Condition="exists('$(SolutionRoot).eslintrc.cjs')">
 		<Exec WorkingDirectory="$(ProjectDir)"
 		      Command="pnpm exec eslint &quot;**/*.{cjs,mjs,js,ts,tsx}&quot; --fix"/>
 	</Target>
 
-	<Target Name="Prettier" BeforeTargets="Lint" AfterTargets="ESLint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)">
+	<Target Name="Prettier" BeforeTargets="Lint" AfterTargets="ESLint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)" Condition="exists('$(SolutionRoot).prettierrc')">
 		<Exec WorkingDirectory="$(ProjectDir)"
 		      Command="pnpm exec prettier --ignore-path &quot;$(SolutionRoot).prettierignore&quot; --config &quot;$(SolutionRoot).prettierrc&quot; --write &quot;**/*.{cjs,mjs,js,ts,tsx,yaml,json}&quot;"/>
 	</Target>

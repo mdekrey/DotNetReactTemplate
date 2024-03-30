@@ -5,7 +5,7 @@ import { InfoComponent } from './pages/info';
 
 const mainRoute: RouteObject[] = [
 	{ path: 'info/', Component: InfoComponent },
-	{ path: '/', element: <Navigate to="/overview" replace={true} /> },
+	{ path: '/', element: <Navigate to="/info" replace={true} /> },
 ];
 
 function App() {

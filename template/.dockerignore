@@ -4,10 +4,11 @@ Dockerfile
 
 .env
 .vs/
+.vscode/
 artifacts/
 *.local.*
 Server/wwwroot/**/*
 !Server/wwwroot/.gitkeep
 **/node_modules
 ui/src/generated/
-Ui*/dev-dist/**/*
+Ui*/dev-dist/

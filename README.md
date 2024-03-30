@@ -23,7 +23,7 @@ A modern full React SPA application with .NET backend-for-frontend.
     - [X] Tests
     - [X] Initial shared library
     - [X] OpenAPI generation
-- [ ] Docker
+- [X] Docker
 - [X] Code cleanliness
     - [X] Editorconfig
     - [X] dotnet format
