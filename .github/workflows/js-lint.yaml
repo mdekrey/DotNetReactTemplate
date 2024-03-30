@@ -1,0 +1,20 @@
+name: Lint UI
+on:
+  pull_request:
+    types: [edited, opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/workflows/parts/cache/
+      - name: 'Prepare UI for linting'
+        # Runs pnpm install, generates APIs, etc.
+        run: |
+          dotnet build -t:PrepareForBuild
+        working-directory: ./template/content/
+      - name: 'Run full lint'
+        run: |
+          pnpm lint
+        working-directory: ./template/content/
