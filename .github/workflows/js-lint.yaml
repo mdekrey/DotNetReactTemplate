@@ -9,12 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/workflows/parts/cache/
-      - name: 'Prepare UI for linting'
-        # Runs pnpm install, generates APIs, etc.
+      - name: 'Ensure UI builds and lints'
+        # Runs pnpm install, generates APIs, etc. and also runs UI linting
         run: |
-          dotnet build -t:PrepareForBuild
-        working-directory: ./template/content/
-      - name: 'Run full lint'
-        run: |
-          pnpm lint
+          dotnet build ./Ui/Ui.esproj
         working-directory: ./template/content/
