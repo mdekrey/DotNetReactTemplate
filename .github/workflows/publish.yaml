@@ -28,12 +28,12 @@ jobs:
       # TEST
       - name: Test
         run: dotnet test --no-build --verbosity normal --configuration Release --collect:"XPlat Code Coverage"
-      - name: 'Upload Code Coverage'
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage
-          path: ./lib/*/TestResults/*/coverage.cobertura.xml
-          retention-days: 7
+      # - name: 'Upload Code Coverage'
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: code-coverage
+      #     path: ./lib/*/TestResults/*/coverage.cobertura.xml
+      #     retention-days: 7
       # - name: Record code coverage
       #   uses: 5monkeys/cobertura-action@master
       #   with:
