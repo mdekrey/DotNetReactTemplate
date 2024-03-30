@@ -1,38 +1,39 @@
 # Modern .NET + React with Vite
 
-A modern full React SPA application with .NET backend-for-frontend.
+A modern full React SPA application with .NET Backend for Frontend.
 
-## Features (WIP)
-- [ ] Full README
-- [X] MSBuild Tooling
-    - [X] Integrate Frontend build
-    - [X] Integrate Frontend tests
-    - [X] Handle Visual Studio experiencce
-    - [X] Integrate Backend code cleanliness
-    - [X] Integrate Frontend code cleanliness
-- [X] .NET Server
-    - [X] OpenAPI generation
-    - [X] SPA service
-    - [X] Telemetry
-    - [X] Tests
-    - [X] .env file support
-- [X] UI
-    - [X] PNPM
-    - [X] nvmrc
-    - [X] Vite
-    - [X] Tests
-    - [X] Initial shared library
-    - [X] OpenAPI generation
-- [X] Docker
-- [X] Code cleanliness
-    - [X] Editorconfig
-    - [X] dotnet format
-    - [X] eslint
-    - [X] prettier
+## Features
+
+- Full README
+- MSBuild Tooling
+    - Integrate Frontend build
+    - Integrate Frontend tests
+    - Handle Visual Studio experiencce
+    - Integrate Backend code cleanliness
+    - Integrate Frontend code cleanliness
+- .NET Server
+    - OpenAPI generation
+    - SPA service
+    - Telemetry
+    - Tests
+    - .env file support
+- UI
+    - PNPM
+    - nvmrc
+    - Vite
+    - Tests
+    - Initial shared library
+    - OpenAPI generation
+- Docker
+- Code cleanliness
+    - Editorconfig
+    - dotnet format
+    - eslint
+    - prettier
 
 ## Template Features
 
-- [ ] Full README
+- [X] Full README
 - [ ] dotnet template definition
 - [ ] CI/CD
     - [ ] Publish template to NuGet as a package
