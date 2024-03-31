@@ -33,10 +33,10 @@ A modern full React SPA application with .NET Backend for Frontend.
 
 ## Template Features
 
-- [X] Full README
-- [X] dotnet template definition
-- [ ] CI/CD
-    - [ ] Publish template to NuGet as a package
+- Full README
+- dotnet template definition
+- CI/CD
+    - Publish template to NuGet as a package
 
 ## Infrastructure improvements
 

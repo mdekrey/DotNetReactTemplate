@@ -1,0 +1,16 @@
+name: Lint UI
+on:
+  pull_request:
+    types: [edited, opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/workflows/parts/cache/
+      - name: 'Ensure UI builds and lints'
+        # Runs pnpm install, generates APIs, etc. and also runs UI linting
+        run: |
+          dotnet build ./Ui/Ui.esproj
+        working-directory: ./template/content/

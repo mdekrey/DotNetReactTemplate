@@ -19,9 +19,5 @@ export default defineConfig({
 			path: '/.vite/hmr',
 		},
 	},
-	test: {
-		globals: true,
-		environment: 'jsdom',
-		setupFiles: ['./vitest.setup.mts'],
-	},
+	test: {},
 });
