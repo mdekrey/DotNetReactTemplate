@@ -12,7 +12,7 @@
 	],
 	"identity": "CompleteDotnetReactSpa",
 	"name": "Complete .NET and React starter",
-	"shortName": "dotnetreactspa",
+	"shortName": "reactapispa",
 	"sourceName": "CompleteDotnetReactSpa",
 	"tags": {
 		"language": "C#",

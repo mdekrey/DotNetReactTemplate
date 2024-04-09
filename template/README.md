@@ -33,4 +33,4 @@ Install the template:
 
 Use it:
 
-	dotnet new dotnetreactspa -n <new-solution-name>
+	dotnet new reactapispa -n <new-solution-name>
