@@ -5,8 +5,8 @@
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<AnalysisLevel>latest-Recommended</AnalysisLevel>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<WarningsAsErrors />
+		<TreatWarningsAsErrors Condition=" '$(Configuration)' == 'Debug' ">true</TreatWarningsAsErrors>
+		<WarningsAsErrors Condition=" '$(Configuration)' == 'Debug' "/>
 
 		<!--
 			CA2007 - ConfigureAwait is not necessary in ASP.NET Core
