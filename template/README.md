@@ -29,7 +29,7 @@ See the generated README.md for more details.
 
 Install the template:
 
-	dotnet new install DeKrey.Templates.CompleteDotnetReactSpa
+	dotnet new install DeKreyConsulting.Templates.CompleteDotnetReactSpa
 
 Use it:
 
