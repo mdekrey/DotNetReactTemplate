@@ -1,5 +1,3 @@
-using Azure.Identity;
-
 using Microsoft.AspNetCore.DataProtection;
 
 using OpenTelemetry.Resources;
