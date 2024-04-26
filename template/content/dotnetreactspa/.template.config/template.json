@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Matt DeKrey",
+	"classifications": [
+		"Web",
+		"ASP.NET",
+		"API",
+		"OpenAPI",
+		"pnpm",
+		"React",
+		"SPA"
+	],
+	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.CompleteDotnetReactSpa",
+	"name": "Complete .NET and React starter",
+	"shortName": "dotnetreactspa",
+	"sourceName": "CompleteDotnetReactSpa",
+	"tags": {
+		"language": "C#",
+		"type": "project"
+	}
+}

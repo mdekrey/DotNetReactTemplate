@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="dotnetreactspa\**\*" Exclude="dotnetreactspa\**\bin\**;dotnetreactspa\**\obj\**" />
+		<Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**;content\**\node_modules\**" />
 		<Compile Remove="**\*" />
 	</ItemGroup>
 

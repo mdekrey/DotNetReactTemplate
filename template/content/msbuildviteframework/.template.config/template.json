@@ -2,17 +2,13 @@
 	"$schema": "http://json.schemastore.org/template",
 	"author": "Matt DeKrey",
 	"classifications": [
-		"Web",
 		"ASP.NET",
-		"API",
-		"OpenAPI",
 		"pnpm",
-		"React",
-		"SPA"
+		"Vite"
 	],
-	"identity": "CompleteDotnetReactSpa",
-	"name": "Complete .NET and React starter",
-	"shortName": "dotnetreactspa",
+	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.MSBuildViteFramework",
+	"name": "MSBuild and Vite starter framework",
+	"shortName": "msbuildviteframework",
 	"sourceName": "CompleteDotnetReactSpa",
 	"tags": {
 		"language": "C#",
