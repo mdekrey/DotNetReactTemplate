@@ -3,7 +3,7 @@
 		<PnpmBuildScript Condition=" '$(Configuration)' != 'Debug' ">pnpm vite build</PnpmBuildScript>
 		<PnpmTestScript>pnpm test</PnpmTestScript>
 
-		<ViteBuildDir>$(SolutionRoot)Server/wwwroot/</ViteBuildDir>
+		<ViteBuildDir>$(ProjectDir)dev-dist</ViteBuildDir>
 	</PropertyGroup>
 	<Import Project="$(RepositoryEngineeringDir)pnpm.targets" />
 
@@ -16,10 +16,6 @@
 		<CompileOutputs Include="$(ViteBuildDir)\index.html" />
 
 		<Clean Include="$(ViteBuildDir)**/*" Exclude="$(ViteBuildDir).gitkeep" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Ui.Api\Ui.Api.esproj" />
 	</ItemGroup>
 
 	<Target Name="Ensure gitkeep" AfterTargets="Build">

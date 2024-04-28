@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Matt DeKrey",
+	"classifications": [
+		"Web",
+		"API",
+		"OpenAPI",
+		"pnpm",
+		"React",
+		"SPA"
+	],
+	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.ViteReactSpa",
+	"name": "React UI starter",
+	"shortName": "reactspabase",
+	"sourceName": "ViteReactSpa",
+	"tags": {
+		"language": "TypeScript",
+		"type": "project"
+	}
+}
