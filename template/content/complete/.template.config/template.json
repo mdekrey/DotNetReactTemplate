@@ -17,5 +17,23 @@
 	"tags": {
 		"language": "C#",
 		"type": "project"
+	},
+	"symbols": {
+		"IISExpressHttpsPortGenerated": {
+			"type": "generated",
+			"generator": "port",
+			"parameters": {
+				"fallback": 5000
+			},
+			"replaces": "62076"
+		},
+		"IISExpressHttpPortGenerated": {
+			"type": "generated",
+			"generator": "port",
+			"parameters": {
+				"fallback": 5001
+			},
+			"replaces": "62077"
+		}
 	}
 }
