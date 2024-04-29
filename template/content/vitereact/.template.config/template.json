@@ -16,5 +16,12 @@
 	"tags": {
 		"language": "TypeScript",
 		"type": "project"
+	},
+	"symbols": {
+		"ViteOutputDir": {
+			"type": "parameter",
+			"description": "The output directory of the vite build",
+			"replaces": "dev-dist/vite"
+		}
 	}
 }

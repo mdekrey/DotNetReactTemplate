@@ -3,7 +3,7 @@
 		<PnpmBuildScript Condition=" '$(Configuration)' != 'Debug' ">pnpm vite build</PnpmBuildScript>
 		<PnpmTestScript>pnpm test</PnpmTestScript>
 
-		<ViteBuildDir>$(ProjectDir)dev-dist</ViteBuildDir>
+		<ViteBuildDir>$(ProjectDir)dev-dist/vite/</ViteBuildDir>
 	</PropertyGroup>
 	<Import Project="$(RepositoryEngineeringDir)pnpm.targets" />
 
