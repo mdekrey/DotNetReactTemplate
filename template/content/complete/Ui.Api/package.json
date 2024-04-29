@@ -11,8 +11,8 @@
 	"license": "MIT",
 	"exports": {
 		"./*": {
-			"types": "./dev-dist/app/src/api/*.d.ts",
-			"default": "./dev-dist/app/src/api/*.js"
+			"types": "./dev-dist/app/src/*.d.ts",
+			"default": "./dev-dist/app/src/*.js"
 		}
 	},
 	"dependencies": {
