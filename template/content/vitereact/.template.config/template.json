@@ -11,7 +11,7 @@
 	],
 	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.ViteReactSpa",
 	"name": "React UI starter",
-	"shortName": "reactspabase",
+	"shortName": "dekreyvitereact",
 	"sourceName": "ViteReactSpa",
 	"tags": {
 		"language": "TypeScript",
