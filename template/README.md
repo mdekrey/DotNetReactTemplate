@@ -27,10 +27,22 @@ See the generated README.md for more details.
 
 ## How to Use
 
-Install the template:
+Install the templates:
 
-	dotnet new install DeKreyConsulting.Templates.CompleteDotnetReactSpa
+```sh
+dotnet new install DeKreyConsulting.Templates.CompleteDotnetReactSpa
+```
 
-Use it:
+Use them:
 
-	dotnet new reactapispa -n <new-solution-name>
+```sh
+# Create a full site including OpenAPI, Server, React front-end, and front-end
+# OpenAPI client. Includes unit tests, pnpm, and dotnet build framework.
+dotnet new dekreycompletereactapispa -n <new-solution-name>
+
+# Creates a blank solution with .NET and pnpm build tooling.
+dotnet new dekreymsbuildviteframework -n <new-solution-name>
+
+# Create a new React UI project
+dotnet new dekreyvitereact -n <ui-project-name>
+```

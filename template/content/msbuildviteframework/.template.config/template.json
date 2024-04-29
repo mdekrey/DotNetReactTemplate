@@ -8,7 +8,7 @@
 	],
 	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.MSBuildViteFramework",
 	"name": "MSBuild and Vite starter framework",
-	"shortName": "msbuildviteframework",
+	"shortName": "dekreymsbuildviteframework",
 	"sourceName": "CompleteDotnetReactSpa",
 	"tags": {
 		"language": "C#",
