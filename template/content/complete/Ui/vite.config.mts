@@ -12,7 +12,7 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			'@': fileURLToPath(await import.meta.resolve('./src')),
+			'@': fileURLToPath(import.meta.resolve('./src')),
 		},
 	},
 	server: {

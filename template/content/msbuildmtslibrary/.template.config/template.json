@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Matt DeKrey",
+	"classifications": [
+		"pnpm",
+		"typescript",
+		"mts"
+	],
+	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.MSBuildMtsLibrary",
+	"name": "TS Library outputting module JS files",
+	"shortName": "dekreymsbuildmtslibrary",
+	"sourceName": "msbuildmtslibrary",
+	"tags": {
+		"language": "TypeScript",
+		"type": "project"
+	}
+}

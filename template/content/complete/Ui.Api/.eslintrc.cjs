@@ -2,7 +2,7 @@
 module.exports = {
 	overrides: [
 		{
-			files: ['**/*.{ts,tsx}'],
+			files: ['**/*.{cts,mts,ts,tsx}'],
 			parserOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
@@ -11,7 +11,7 @@ module.exports = {
 			},
 		},
 		{
-			files: ['src/**/*.{ts,tsx}'],
+			files: ['src/**/*.{cts,mts,ts,tsx}'],
 			parserOptions: {
 				project: './tsconfig.json',
 				tsconfigRootDir: __dirname,
