@@ -1,0 +1,25 @@
+{
+	"name": "@npmscope/msbuildmtslibrary",
+	"version": "0.1.0",
+	"description": "",
+	"private": "true",
+	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest watch"
+	},
+	"author": "",
+	"license": "MIT",
+	"exports": {
+		"./*": {
+			"types": "./dev-dist/app/src/*.d.mts",
+			"default": "./dev-dist/app/src/*.mjs"
+		}
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"@types/node": "20.11.30",
+		"tsc-alias": "^1.8.8",
+		"vitest": "^1.2.2"
+	}
+}

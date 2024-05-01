@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/workflows/parts/cache/
-      - name: 'Run tests'
+      - name: 'Run tests in complete framework'
         run: |
           dotnet test
-        working-directory: ./template/content/
+        working-directory: ./template/content/complete/

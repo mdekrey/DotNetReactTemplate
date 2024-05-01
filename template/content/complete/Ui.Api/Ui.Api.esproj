@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.Build.NoTargets/3.7.0">
+	<PropertyGroup>
+		<PnpmBuildScript>pnpm exec tsc -b</PnpmBuildScript>
+		<PnpmTestScript>pnpm test</PnpmTestScript>
+	</PropertyGroup>
+	<Import Project="$(RepositoryEngineeringDir)pnpm.targets" />
+
+	<ItemGroup>
+		<Compile Remove="src/**/stories/**/*;src/**/*.stories.*" />
+		<Watch Include="$(SolutionRoot)schemas/**/*" />
+
+		<CompileOutputs Include="dev-dist/app/tsconfig.tsbuildinfo" />
+
+		<Clean Include="src/generated/api/**/*" />
+	</ItemGroup>
+
+	<Target Name="ResolveAliases" AfterTargets="NodeBuild">
+		<Exec WorkingDirectory="$(ProjectDir)" Command="pnpm tsc-alias"/>
+	</Target>
+
+	<Target Name="GenerateApi" BeforeTargets="Generation" DependsOnTargets="PnpmInstall" Inputs="$(SolutionRoot)schemas\api.yaml" Outputs="src/generated/api/.gitignore">
+		<Exec WorkingDirectory="$(ProjectDir)" Command="pnpm openapi-codegen-typescript ../schemas/api.yaml src/generated/api/ -c -o codegen.config.yaml"/>
+	</Target>
+
+	<Target Name="Generation" BeforeTargets="PrepareForBuild" />
+
+	<Target Name="ESLint" BeforeTargets="Lint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)" Condition="exists('$(SolutionRoot).eslintrc.cjs')">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pnpm exec eslint &quot;**/*.{cjs,mjs,js,cts,mts,ts,tsx}&quot; --fix"/>
+	</Target>
+
+	<Target Name="Prettier" BeforeTargets="Lint" AfterTargets="ESLint" Inputs="@(Compile);@(RestoreConfig);@(CompileConfig)" Outputs="$(PnpmLintRecordPath)" Condition="exists('$(SolutionRoot).prettierrc')">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pnpm exec prettier --ignore-path &quot;$(SolutionRoot).prettierignore&quot; --config &quot;$(SolutionRoot).prettierrc&quot; --write &quot;**/*.{cjs,mjs,js,cts,mts,ts,tsx,yaml,json}&quot;"/>
+	</Target>
+</Project>

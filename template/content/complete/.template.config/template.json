@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Matt DeKrey",
+	"classifications": [
+		"Web",
+		"ASP.NET",
+		"API",
+		"OpenAPI",
+		"pnpm",
+		"React",
+		"SPA"
+	],
+	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.CompleteDotnetReactSpa",
+	"name": "Complete .NET and React starter",
+	"shortName": "dekreycompletereactapispa",
+	"sourceName": "CompleteDotnetReactSpa",
+	"tags": {
+		"language": "C#",
+		"type": "project"
+	},
+	"symbols": {
+		"IISExpressHttpsPortGenerated": {
+			"type": "generated",
+			"generator": "port",
+			"parameters": {
+				"fallback": 5000
+			},
+			"replaces": "62076"
+		},
+		"IISExpressHttpPortGenerated": {
+			"type": "generated",
+			"generator": "port",
+			"parameters": {
+				"fallback": 5001
+			},
+			"replaces": "62077"
+		}
+	}
+}

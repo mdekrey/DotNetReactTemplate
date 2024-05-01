@@ -1,0 +1,8 @@
+{
+	"extends": "../tsconfig.base-node.json",
+	"compilerOptions": {
+		"outDir": "./dev-dist/node",
+		"types": ["node"]
+	},
+	"include": ["*.ts", "*.mts", "*.cts", ".*.cjs", "scripts"]
+}

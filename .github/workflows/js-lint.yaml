@@ -13,4 +13,5 @@ jobs:
         # Runs pnpm install, generates APIs, etc. and also runs UI linting
         run: |
           dotnet build ./Ui/Ui.esproj
-        working-directory: ./template/content/
+        working-directory: ./template/content/complete/
+      # Templates cannot build outside of the scope of the MSBuild Framework
