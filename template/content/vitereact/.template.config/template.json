@@ -3,14 +3,12 @@
 	"author": "Matt DeKrey",
 	"classifications": [
 		"Web",
-		"API",
-		"OpenAPI",
 		"pnpm",
 		"React",
 		"SPA"
 	],
 	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.ViteReactSpa",
-	"name": "React UI starter",
+	"name": "React UI starter within the MSBuild Vite Framework",
 	"shortName": "dekreyvitereact",
 	"sourceName": "ViteReactSpa",
 	"tags": {
@@ -22,6 +20,12 @@
 			"type": "parameter",
 			"description": "The output directory of the vite build",
 			"replaces": "dev-dist/vite"
+		},
+		"NpmScope": {
+			"type": "parameter",
+			"dataType": "string",
+			"replaces": "npmscope",
+			"defaultValue": "local"
 		}
 	},
 	"primaryOutputs": [
@@ -33,9 +37,6 @@
 		{
 			"description": "Add projects to solution",
 			"manualInstructions": [ { "text": "Add generated project to solution manually." } ],
-			"args": {
-				"solutionFolder": "src"
-			},
 			"actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
 			"continueOnError": true
 		}

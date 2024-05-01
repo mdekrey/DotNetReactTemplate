@@ -9,18 +9,29 @@
 	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.MSBuildMtsLibrary",
 	"name": "TS Library outputting module JS files",
 	"shortName": "dekreymsbuildmtslibrary",
-	"sourceName": "msbuildmtslibrary",
+	"sourceName": "MSBuildMtsLibrary",
 	"tags": {
 		"language": "TypeScript",
 		"type": "project"
 	},
+	"symbols": {
+		"NpmScope": {
+			"type": "parameter",
+			"dataType": "string",
+			"replaces": "npmscope",
+			"defaultValue": "local"
+		}
+	},
 	"primaryOutputs": [
 		{
-			"path": "msbuildmtslibrary.esproj"
+			"path": "MSBuildMtsLibrary.esproj"
 		}
 	],
 	"postActions": [
 		{
+			"projectFiles": [
+				"MSBuildMtsLibrary.esproj"
+			],
 			"description": "Add projects to solution",
 			"manualInstructions": [ { "text": "Add generated project to solution manually." } ],
 			"args": {
