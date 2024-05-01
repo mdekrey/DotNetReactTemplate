@@ -44,5 +44,8 @@ dotnet new dekreycompletereactapispa -n <new-solution-name>
 dotnet new dekreymsbuildviteframework -n <new-solution-name>
 
 # Create a new React UI project
-dotnet new dekreyvitereact -n <ui-project-name>
+dotnet new dekreymsbuildvitereact -n <ui-project-name> -N <npm-scope>
+
+# Create a new TS project for use with the MSBuild Vite Framework
+dotnet new dekreymsbuildmtslibrary -n <ui-project-name> -N <npm-scope>
 ```

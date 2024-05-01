@@ -9,7 +9,7 @@
 	],
 	"identity": "DeKreyConsulting.Templates.CompleteDotnetReactSpa.ViteReactSpa",
 	"name": "React UI starter within the MSBuild Vite Framework",
-	"shortName": "dekreyvitereact",
+	"shortName": "dekreymsbuildvitereact",
 	"sourceName": "ViteReactSpa",
 	"tags": {
 		"language": "TypeScript",
