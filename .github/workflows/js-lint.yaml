@@ -13,4 +13,14 @@ jobs:
         # Runs pnpm install, generates APIs, etc. and also runs UI linting
         run: |
           dotnet build ./Ui/Ui.esproj
-        working-directory: ./template/content/
+        working-directory: ./template/content/complete/
+      - name: 'Ensure mts library template builds'
+        # Runs pnpm install, generates APIs, etc. and also runs UI linting
+        run: |
+          dotnet build ./MSBuildMtsLibrary.esproj
+        working-directory: ./template/content/msbuildmtslibrary
+      - name: 'Ensure react spa template builds'
+        # Runs pnpm install, generates APIs, etc. and also runs UI linting
+        run: |
+          dotnet build ./ViteReactSpa.esproj
+        working-directory: ./template/content/vitereact
