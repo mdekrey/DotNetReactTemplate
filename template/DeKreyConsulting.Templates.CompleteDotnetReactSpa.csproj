@@ -4,7 +4,7 @@
 		<!-- The package metadata. Fill in the properties marked as TODO below -->
 		<!-- Follow the instructions on https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices -->
 		<PackageId>DeKreyConsulting.Templates.CompleteDotnetReactSpa</PackageId>
-		<VersionPrefix Condition=" '$(VersionPrefix)' == '' and '$(Version)' == '' ">1.0.3</VersionPrefix>
+		<VersionPrefix Condition=" '$(VersionPrefix)' == '' and '$(Version)' == '' ">1.0.4</VersionPrefix>
 		<Title>Complete .NET React SPA template</Title>
 		<Authors>Matt DeKrey</Authors>
 		<Description>A web application starter with a Backend for Frontend built with .NET, with an OpenAPI file to define the API layer, along with a UI built with PNPM, React and Vite.</Description>
