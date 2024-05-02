@@ -34,12 +34,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**;content\**\node_modules\**" />
 		<Compile Remove="**\*" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
+
+	<Target Name="GenerateCompleteTemplate" BeforeTargets="Build">
+		<Exec WorkingDirectory="$(ProjectDir)"
+		      Command="pwsh build-complete-template.ps1"
+		      IgnoreStandardErrorWarningFormat="true" />
+		<ItemGroup>
+			<Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**;content\**\node_modules\**;content\**\artifacts\**;content\**\dev-dist\**;content\**\generated\**" />
+		</ItemGroup>
+	</Target>
 
 </Project>
