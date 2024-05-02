@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import type { EnvironmentInfo } from '@ui/api/queries/getEnvironmentInfo';
-import { getEnvironmentInfo } from '@ui/api/queries/getEnvironmentInfo';
+import type { EnvironmentInfo } from '@ui/ui.api/queries/getEnvironmentInfo';
+import { getEnvironmentInfo } from '@ui/ui.api/queries/getEnvironmentInfo';
 
 export function useGitVersion() {
 	const result = useSuspenseQuery(getEnvironmentInfo);

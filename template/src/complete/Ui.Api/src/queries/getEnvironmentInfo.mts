@@ -1,5 +1,5 @@
 import { type StructuredResponses } from '@/generated/api/operations/getEnvironmentInfo';
-import { api } from '../fetch-api';
+import { api } from '../fetch-api.mjs';
 
 export type EnvironmentInfo = StructuredResponses[200]['application/json'];
 

@@ -1,7 +1,7 @@
 import type { FetchQueryOptions } from '@tanstack/react-query';
 import { describe, it, expectTypeOf } from 'vitest';
-import type { EnvironmentInfo } from './getEnvironmentInfo';
-import { getEnvironmentInfo } from './getEnvironmentInfo';
+import type { EnvironmentInfo } from './getEnvironmentInfo.mjs';
+import { getEnvironmentInfo } from './getEnvironmentInfo.mjs';
 
 describe('getEnvironmentInfo', () => {
 	it('matches tanstack-query signature', () => {

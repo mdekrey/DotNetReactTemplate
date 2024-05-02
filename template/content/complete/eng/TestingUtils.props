@@ -1,5 +1,0 @@
-<Project>
-	<ItemGroup Condition=" !$(AssemblyName.EndsWith('.Tests')) ">
-		<InternalsVisibleTo Include="$(AssemblyName).Tests" />
-	</ItemGroup>
-</Project>
