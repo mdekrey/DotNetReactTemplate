@@ -8,7 +8,13 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
+
       - uses: ./.github/workflows/parts/cache/
+      - name: 'Create the template'
+        run: |
+          dotnet build
+        working-directory: ./template/
+
       - name: 'Ensure UI builds and lints'
         # Runs pnpm install, generates APIs, etc. and also runs UI linting
         run: |

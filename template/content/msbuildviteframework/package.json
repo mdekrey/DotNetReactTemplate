@@ -11,7 +11,7 @@
 		"eslint:fix": "eslint \"**/*.{cjs,mjs,js,cts,mts,ts,tsx}\" --fix",
 		"prettier": "prettier --list-different \"**/*.{cjs,mjs,js,cts,mts,ts,tsx,yaml,json}\"",
 		"prettier:fix": "prettier --write \"**/*.{cjs,mjs,js,cts,mts,ts,tsx,yaml,json}\"",
-		"typecheck": "dotnet build -t:PrepareForBuild && tsc -b"
+		"typecheck": "dotnet build -t:Build && tsc -b"
 	},
 	"engines": {
 		"node": ">=20.8.1",
